@@ -1,0 +1,82 @@
+<% include partials/header %>
+
+<header class="main-header">
+  <div class="main-header-textbox">
+    <div class="main-logo-box">
+      <span class="main-logo">
+        <img src="/img/fxfitlog.png">
+      </span>
+    </div>
+    <h1 class="main-header-primary">
+      <span class="main-headline">Functional Fitness</span>
+      <span class="main-headline-sub">Live Stronger. Live Better.</span>
+    </h1>
+  </div>
+  <div class="main-btn-box">
+    <a class="btn btn-white btn-animate" href="/about">What is Functional Fitness?</a>
+  </div>
+</header>
+
+<div class="ui container">
+  <main>
+    <div class="ui divider"></div>
+    <h1 class="main-feature-header">
+        Featured Article
+      </h1>
+    <section class="ui raised segment">
+      <article class="content">
+        <h2 class="main-section-header">
+          <a class="main-section-link" href="/article/<%= article._id %>">
+            <%= article.title %>
+          </a>
+        </h2>
+        <div class="item">
+          <img class="ui centered rounded image" src="<%=article.image%>">
+          <div class="ui divider"></div>
+          <div class="meta">
+            <span>By <%=article.author %> - </span>
+            <span><%=article.date.toDateString()%></span>
+          </div>
+        </div>
+        <div class="description">
+          <p><%- article.content.substring(0, 400) %>...</p>
+        </div>
+        <div class="flexButtonBox">
+          <a class="ui floated basic green button" href="/article/<%= article._id %>">
+            Read more...
+          </a>
+        </div>
+      </article>
+    </section>
+    <div class="ui divider"></div>
+    <h1 class="main-feature-header">
+      Featured Fitness Program
+    </h1>
+    <section class="ui raised segment">
+      <article class="content">
+          <h2 class="main-section-header">
+            <a class="main-section-link" href="/workout/<%= workout._id %>">
+              <%= workout.title %>
+            </a>
+          </h2>
+          <span><strong>Author:</strong> <%= workout.author %> - </span>
+          <span><strong>Published:</strong> <%= workout.date.toDateString() %></span>
+          <div class="ui divider"></div>
+          <div class="content">
+            <div class="description">
+              <p><strong>Classification:</strong> <%= workout.classification %></p>
+              <p><strong>Duration:</strong> <%= workout.duration %></p>
+              <p><strong>Description:</strong> <%- workout.description %></p>
+            </div>
+            <div class="flexButtonBox">
+              <a class="ui floated basic green button" href="/workout/<%= workout._id %>">
+                Read more...
+              </a>
+            </div>
+          </div>
+        </article>
+    </section>
+  </main>
+</div>
+
+<% include partials/footer %>

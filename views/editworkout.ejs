@@ -1,0 +1,38 @@
+<% include partials/header %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">Editing <%= workout.title %> </div>
+    <form class="ui form" action="/workout/<%= workout._id %>?_method=PUT" method="POST">
+      <div class="field">
+        <label>Title</label>
+        <input type="text" name="workout[title]" value="<%= workout.title %>">
+      </div>
+      <div class="field">
+        <label>Author</label>
+        <input type="text" name="workout[author]" value="<%= workout.author %>">
+      </div>
+      <div class="field">
+        <label>Classification</label>
+        <input type="text" name="workout[classification]" value="<%= workout.classification %>">
+      </div>
+      <div class="field">
+        <label>Duration</label>
+        <input type="text" name="workout[duration]" value="<%= workout.duration %>">
+      </div>
+      <div class="field">
+        <label>Description</label>
+        <input type="text" name="workout[description]" value="<%= workout.description %>">
+      </div>
+      <div class="field">
+        <label>Content</label>
+        <div class="formatButtonBox">
+          <button id="btnP" type="button"><i class="paragraph icon"></i></button>
+          <button id="btnH" type="button"><i class="heading icon"></i></button>
+        </div>
+        <textarea name="workout[content]" placeholder="Content. Use HTML tags to format."><%- workout.content %></textarea>
+      </div>
+      <button class="ui blue big basic button">Submit</button>
+    </form>
+  </div>
+
+<% include partials/footer %>

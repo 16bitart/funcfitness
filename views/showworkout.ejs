@@ -1,0 +1,22 @@
+<% include partials/header %>
+
+<div class="ui main text container">
+  <div class="ui center aligned huge header"><%=workout.title%></div>
+  <a href="/workout">Back to All</a>
+  <div class="ui raised segment">
+    <div class="item">
+      <div class="content">
+        <p><strong>Program by: </strong><%= workout.author %></p>
+        <p><strong>Publish Date: </strong><%=workout.date.toDateString()%></p>
+        <p><strong>Workout Classification: </strong><%= workout.classification %></p>
+        <p><strong>Workout Duration: </strong><%= workout.duration %></p>
+      </div>
+      <div class="ui divider"></div>
+    </div>
+    <div class="description">
+      <p><%- workout.content %>...</p>
+    </div>
+  </div>
+</div>
+
+<% include partials/footer %>

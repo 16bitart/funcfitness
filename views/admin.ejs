@@ -1,0 +1,59 @@
+<% include partials/header %>
+
+<div class="ui container">
+
+<h1 class="ui massive header">Admin Panel</h1>
+
+  <a class="ui basic button" href="/article/new">Add New Article</a>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th>Article</th>
+        <th>Author</th>
+        <th>ID</th>
+        <th colspan="2">Control</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% articles.forEach(function(article){ %>
+      <tr>
+        <td data-label="Article"><a href=""><%= article.title %></a></td>
+        <td data-label="Author"><%= article.author %></td>
+        <td data-label="Date"><%= article._id %></td>
+        <td><a class="ui blue basic button" href="/article/<%= article._id%>/edit">Edit</a></td>
+        <form action="/article/<%= article._id %>?_method=DELETE" method="POST">
+          <td><button class="ui red basic button">Delete</button></td>
+        </form>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  <a class="ui basic button" href="/workout/new">Add New Workout</a>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th>Workout</th>
+        <th>Author</th>
+        <th>Date</th>
+        <th colspan="2">Control</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% workouts.forEach(function(workout){ %>
+      <tr>
+        <td data-label="Workout"><a href=""><%= workout.title %></a></td>
+        <td data-label="Author"><%= workout.author %></td>
+        <td data-label="Date"><%= workout._id %></td>
+        <td><a class="ui blue basic button" href="/workout/<%= workout._id%>/edit">Edit</a></td>
+        <form action="/workout/<%= workout._id %>?_method=DELETE" method="POST">
+          <td><button class="ui red basic button">Delete</button></td>
+        </form>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+</div>
+
+<% include partials/footer %>

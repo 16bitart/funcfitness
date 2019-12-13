@@ -1,0 +1,23 @@
+<% include partials/header %>
+
+<div class="ui main text container">
+  <div class="ui huge header"><%=article.title%></div>
+  <a href="/article">Back to All</a>
+  <div class="ui raised segment">
+    <div class="item">
+      <img class="ui centered rounded image" src="<%=article.image%>">
+      <div class="ui divider"></div>
+      <div class="content">
+        <span>By <%=article.author %> - </span>
+        <span><%=article.date.toDateString()%></span>
+      </div>
+    </div>
+    <div class="description">
+      <p><%- article.content %>...</p>
+    </div>
+    <div class="flexButtonBox">
+    </div>
+  </div>
+</div>
+
+<% include partials/footer %>

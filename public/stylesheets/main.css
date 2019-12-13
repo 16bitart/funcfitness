@@ -1,0 +1,333 @@
+* {
+  box-sizing: border-box;
+}
+
+nav {
+  margin-bottom: 5vh;
+}
+
+.main-header {
+  margin: 5vh auto 12vh auto;
+  width: 80%;
+  height: 80vh;
+  padding-top: 5vh;
+  background: rgba(0, 0, 0, 0.144);
+  background-image: linear-gradient(to left bottom, rgba(0, 0, 0, 0.849), rgba(255, 255, 255, 0.11)), url(/img/headerimg.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 25px;
+  box-shadow: 20px 20px 15px rgba(0, 0, 0, 0.225);
+}
+
+.main-logo img {
+  width: 64px;
+}
+
+.main-header-primary {
+  font-family: 'Black Ops One';
+  text-align: center;
+  color: rgb(112, 177, 112);
+}
+
+.main-header-primary, span {
+  line-height: 5.2rem;
+  margin: 2rem 0;
+}
+
+.main-headline {
+  font-size: 5rem;
+  display: block;
+  margin: 2vh 0;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+}
+
+.main-headline-sub {
+  font-size: 3.5rem;
+  display: inline-block;
+  animation-name: moveInRight;
+  animation-duration: .5s;
+  
+}
+
+.main-feature {
+  margin: 5vh 0;
+}
+
+.main-feature-header {
+  font-family: "Black Ops One", sans-serif;
+  margin: 3vh auto;
+  text-align: right;
+  font-size: 2.3rem;
+}
+
+.main-article-header h1 {
+  font-size: 2.5rem;
+}
+
+.img-box {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.img-box, img {
+  width: 80%;
+  border-radius: 10px;
+}
+
+.main-btn-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.main-section-link:link,
+.main-section-link:visited {
+  color: rgb(13, 119, 13)
+}
+
+.main-section-header {
+  font-size: 3.3rem;
+  text-align: center;
+  padding: 2rem auto;
+}
+
+.main-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+.about-section {
+  margin: 5vh auto;
+}
+
+/* Buttons */
+.btn:link,
+.btn:visited {
+  font-size: 1.25rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  font-family: 'Black Ops One';
+  height: 50%;
+  align-content: center;
+  padding: 1rem 2rem;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  color: rgb(13, 119, 13);
+
+}
+
+.btn:hover {  
+  font-size: 1.33rem;
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+}
+
+.btn:active {
+  transform: translateY(-2px);
+}
+
+.btn-white {
+  background: #fff;
+  color: rgb(13, 119, 13);
+}
+
+.btn-animate {
+  animation: moveInBottom .5s ease-out .75s;
+  /* plays the 0% part of animation before the anim starts with fill-mode prop */
+  animation-fill-mode: backwards;
+}
+
+.flexButtonBox {
+  margin-top: 5vh;
+  display: flex;
+  justify-content: center;
+}
+
+.formatButtonBox {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1%;
+}
+
+.about-section {
+  animation: moveInBottom .5s ease-out .75s;
+  /* plays the 0% part of animation before the anim starts with fill-mode prop */
+  animation-fill-mode: backwards;
+}
+
+.flyRight {
+  animation-name: moveInRight;
+  animation-duration: .5s;
+}
+/* Keyframes  */
+
+@keyframes moveInLeft {
+  0% { /* start*/
+      opacity: 0;
+      transform: translateX(-10rem); /*start to left*/
+  }
+  80% {
+      transform: translateX(1rem);
+  }
+  100% { /* finish*/
+      opacity: 1;
+      transform: translateX(0); /*end at position*/
+  }
+}
+
+@keyframes moveInRight {
+  0% { /* start*/
+      opacity: 0;
+      transform: translateX(10rem); /*start to left*/
+  }
+  80% {
+      transform: translateX(-1rem);
+  }
+  100% { /* finish*/
+      opacity: 1;
+      transform: translateX(0); /*end at position*/
+  }
+}
+
+@keyframes moveInBottom {
+  0% { /* start*/
+      opacity: 0;
+      transform: translateY(5rem); /*start to left*/
+  }
+  100% { /* finish*/
+      opacity: 1;
+      transform: translateY(0); /*end at position*/
+  }
+}
+
+
+@keyframes  logoPop {
+  0%{
+      transform: scale(1);
+  }
+  100%{
+      transform: scale(1.5);
+  }
+
+}
+
+
+/* Media Queries */
+@media only screen and (max-width: 370px) {
+  .btn:link,
+  .btn:visited {
+  font-size: .8rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  font-family: 'Black Ops One';
+  height: 40%;
+  align-content: center;
+  padding: .8rem 1.2rem;
+  border-radius: 10rem;
+  transition: all 0.5s;
+}
+}
+
+@media only screen and (max-width: 420px) {
+
+  .main-headline {
+    font-size: 2.5rem;
+    display: block;
+    margin: 2vh 0;
+  }
+  
+  .main-headline-sub {
+    font-size: 2rem;
+    display: inline-block;
+  }
+
+  .btn:link,
+  .btn:visited {
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  font-family: 'Black Ops One';
+  height: 50%;
+  align-content: center;
+  padding: 1rem 2rem;
+  border-radius: 10rem;
+  transition: all 0.5s;
+}
+
+.main-article-header h1 {
+  font-size: 1.4rem;
+}
+
+}
+
+@media only screen and (max-width: 560px) {
+
+  .main-headline {
+    font-size: 3rem;
+    display: block;
+    margin: 2vh 0;
+  }
+  
+  .main-headline-sub {
+    font-size: 1.8rem;
+    display: inline-block;
+  }
+
+  .main-section-header {
+    font-size: 2rem;
+  }
+  .btn:link,
+  .btn:visited {
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  font-family: 'Black Ops One';
+  height: 50%;
+  align-content: center;
+  padding: 1rem 2rem;
+  border-radius: 10rem;
+  transition: all 0.5s;
+}
+
+.main-article-header h1 {
+  font-size: 1.4rem;
+}
+
+}
+
+@media only screen and (orientation: landscape) and (max-width: 720px) {
+
+  .main-header {
+    margin: 5vh auto;
+    width: 80%;
+    height: 80vh;
+    padding-top: 5vh;
+    background: rgba(0, 0, 0, 0.144);
+    background-image: linear-gradient(to left bottom, rgba(0, 0, 0, 0.849), rgba(255, 255, 255, 0.11)), url(/img/headerimg.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 25px;
+  }
+  
+  .main-headline {
+    font-size: 2.5rem;
+    display: block;
+    margin: 2vh 0;
+  }
+  
+  .main-headline-sub {
+    font-size: 2rem;
+    display: inline-block;
+  }
+
+  .main-header-primary, span {
+    line-height: 2.5rem;
+    margin: 1rem 0;
+  }
+}

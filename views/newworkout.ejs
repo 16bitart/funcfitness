@@ -1,0 +1,38 @@
+<% include partials/header %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">Create New Workout </div>
+    <form class="ui form" action="/workout" method="POST">
+      <div class="field">
+        <label>Title</label>
+        <input type="text" name="workout[title]" placeholder="Title">
+      </div>
+      <div class="field">
+        <label>Author</label>
+        <input type="text" name="workout[author]" placeholder="Author">
+      </div>
+      <div class="field">
+        <label>Classification</label>
+        <input type="text" name="workout[classification]" placeholder="Classify what kind of program this is. Crossfit/Powerlifting/Bodybuilding">
+      </div>
+      <div class="field">
+        <label>Duration</label>
+        <input type="text" name="workout[duration]" placeholder="Duration of program (days, weeks, etc)">
+      </div>
+      <div class="field">
+        <label>Description</label>
+        <input type="text" name="workout[description]" placeholder="Short Description">
+      </div>
+      <div class="field">
+        <label>Content</label>
+        <div class="formatButtonBox">
+          <button id="btnP" type="button"><i class="paragraph icon"></i></button>
+          <button id="btnH" type="button"><i class="heading icon"></i></button>
+        </div>
+        <textarea name="workout[content]" placeholder="Content. Use HTML tags to format."></textarea>
+      </div>
+      <button class="ui blue big basic button">Submit</button>
+    </form>
+  </div>
+
+<% include partials/footer %>
